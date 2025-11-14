@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vaani AI — Multilingual Learning</title>
+  <style>
+    :root{
+      --grad1:#d1008f; --grad2:#7a13b6; --grad3:#2b0f4a;
+      --card-bg: rgba(255,255,255,0.95);
+      --accent:#8a00c2; --muted:#6b5aa6;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Arial;
+      background: linear-gradient(135deg,var(--grad1),var(--grad2),var(--grad3));
+      color:#111; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+    }
+    .app {
+      width:100%; max-width:980px; border-radius:18px; overflow:hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35); display:flex; background:transparent;
+    }
+    .left {
+      width:48%; padding:40px; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      color: #fff; display:flex; flex-direction:column; gap:18px;
+    }
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:56px;height:56px;border-radius:12px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+    h1{margin:0;font-size:26px;letter-spacing:0.2px}
+    p.lead{margin:0;color:rgba(255,255,255,0.9);opacity:0.95}
+    .features{display:flex;gap:12px;margin-top:12px}
+    .chip{background:rgba(255,255,255,0.07);padding:8px 10px;border-radius:999px;font-weight:600;color:#fff;font-size:13px}
+
+    .right{width:52%; background:var(--card-bg); padding:28px; display:flex; flex-direction:column; gap:14px}
+    .step-card{background:transparent;padding:10px;border-radius:12px}
+    label{display:block;font-weight:700;margin-bottom:6px;color:var(--muted)}
+    input, select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e6e4ff;background:transparent}
+    .btn{display:inline-block;padding:10px 14px;background:var(--accent);color:#fff;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .secondary{background:transparent;border:1px solid #e9e4ff;color:var(--accent)}
+    .actions{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}
+    .action-card{background:linear-gradient(180deg,#faf8ff,#f2efff);padding:12px;border-radius:12px;display:flex;gap:10px;align-items:center;border:1px solid #efeafc}
+    .action-card .ic{width:42px;height:42px;border-radius:10px;background:linear-gradient(180deg,var(--grad1),var(--grad2));display:flex;align-items:center;justify-content:center;color:#fff}
+    .muted-t{color:#5b5870;font-size:14px}
+    .small{font-size:13px;color:#6d6b7d}
+
+    .footer{margin-top:10px;font-size:13px;color:#7a6d97}
+    .ai-illus{width:100%;height:200px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))}
+
+    @media(max-width:900px){
+      .app{flex-direction:column;align-items:stretch}
+      .left,.right{width:100%}
+      .ai-illus{height:160px}
+      .actions{grid-template-columns:repeat(1,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <div class="app" role="application">
+    <aside class="left">
+      <div class="logo">
+        <div class="mark" aria-hidden>
+          <!-- stylized AI mark -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+            <path d="M8 14c1.5-2 4-2 6 0" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.5 9.5h.01M14.5 9.5h.01" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-weight:800;font-size:18px">Vaani AI</div>
+          <div style="font-size:12px;opacity:0.9">Multilingual Learning Assistant</div>
+        </div>
+      </div>
+
+      <h1>Welcome to Vaani AI</h1>
+      <p class="lead">Your multilingual AI assistant for learning, teaching, and generating educational content.</p>
+
+      <div class="ai-illus" aria-hidden>
+        <!-- simple AI illustration -->
+        <svg width="320" height="150" viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#ffd2f0" />
+              <stop offset="1" stop-color="#caa3ff" />
+            </linearGradient>
+          </defs>
+          <rect x="10" y="20" rx="14" ry="14" width="300" height="110" fill="url(#g1)" />
+          <circle cx="75" cy="70" r="28" fill="#fff" opacity="0.9" />
+          <rect x="120" y="40" width="150" height="80" rx="8" fill="#fff" opacity="0.9" />
+        </svg>
+      </div>
+
+      <div class="features">
+        <div class="chip">NCERT-aligned</div>
+        <div class="chip">25+ Languages</div>
+        <div class="chip">Accessibility</div>
+      </div>
+
+      <div class="muted-t">Designed for rural classrooms • IIT Bombay submission</div>
+    </aside>
+
+    <section class="right" aria-live="polite">
+
+      <!-- Step 1: Phone login -->
+      <div id="step-phone" class="step-card">
+        <label>Login with Phone</label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input id="phone" placeholder="Enter mobile number (e.g. 9123456789)" />
+          <button id="sendOtp" class="btn">Send OTP</button>
+        </div>
+        <div class="small">We'll send a one-time password (OTP) for verification.</div>
+      </div>
+
+      <!-- Step 2: OTP -->
+      <div id="step-otp" class="step-card" style="display:none">
+        <label>Enter OTP</label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input id="otp" placeholder="4-digit OTP" style="width:120px" />
+          <button id="verifyOtp" class="btn">Verify</button>
+        </div>
+        <div class="small">(for demo, use 1234)</div>
+      </div>
+
+      <!-- Step 3: User details -->
+      <div id="step-details" class="step-card" style="display:none">
+        <label>Tell us about yourself</label>
+        <input id="first" placeholder="First name" />
+        <input id="last" placeholder="Surname" style="margin-top:8px" />
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <input id="district" placeholder="District" />
+          <input id="board" placeholder="Board (CBSE/State)" />
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+          <label style="margin:0;min-width:68px">Standard</label>
+          <select id="standard" style="flex:1">
+            <option>Select</option>
+            <option>Class 3</option>
+            <option>Class 5</option>
+            <option>Class 8</option>
+            <option>Class 10</option>
+            <option>Class 12</option>
+          </select>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button id="saveDetails" class="btn">Save & Continue</button>
+          <button id="editPhone" class="secondary">Back</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Subject selection -->
+      <div id="step-subject" class="step-card" style="display:none">
+        <label>Select Subject</label>
+        <select id="subject">
+          <option>Mathematics</option>
+          <option>Science</option>
+          <option>English</option>
+          <option>History</option>
+          <option>Geography</option>
+        </select>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button id="chooseSubject" class="btn">Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 5: Actions -->
+      <div id="step-actions" class="step-card" style="display:none">
+        <label>Choose an action</label>
+        <div class="actions" style="margin-top:8px">
+          <div class="action-card" role="button" onclick="openBook()">
+            <div class="ic">📚</div>
+            <div>
+              <div style="font-weight:700">Open Book</div>
+              <div class="small">Read chapter content</div>
+            </div>
+          </div>
+
+          <div class="action-card" role="button" onclick="solveExercise()">
+            <div class="ic">✏️</div>
+            <div>
+              <div style="font-weight:700">Solve Exercise</div>
+              <div class="small">Practice questions</div>
+            </div>
+          </div>
+
+          <div class="action-card" role="button" onclick="watchVideo()">
+            <div class="ic">🎥</div>
+            <div>
+              <div style="font-weight:700">Watch Video</div>
+              <div class="small">Short chapter videos</div>
+            </div>
+          </div>
+
+          <div class="action-card" role="button" onclick="talkAI()">
+            <div class="ic">💬</div>
+            <div>
+              <div style="font-weight:700">Talk with AI</div>
+              <div class="small">Ask doubts in local language</div>
+            </div>
+          </div>
+
+          <div class="action-card" style="grid-column:1 / -1" role="button" onclick="makeQuiz()">
+            <div class="ic">🧠</div>
+            <div>
+              <div style="font-weight:700">Generate Quiz</div>
+              <div class="small">Auto-create chapter quiz</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">Logged out • Vaani AI • Build for inclusive learning</div>
+    </section>
+  </div>
+
+  <script>
+    // Simple UI flow (demo-only)
+    const sendOtp = document.getElementById('sendOtp');
+    const verifyOtp = document.getElementById('verifyOtp');
+    const saveDetails = document.getElementById('saveDetails');
+    const editPhone = document.getElementById('editPhone');
+
+    sendOtp.onclick = () => {
+      const phone = document.getElementById('phone').value.trim();
+      if(!phone || phone.length < 10){ alert('Enter valid phone'); return }
+      document.getElementById('step-otp').style.display = 'block';
+      sendOtp.innerText = 'Resend';
+      alert('OTP sent (demo) — use 1234');
+    }
+
+    verifyOtp.onclick = () => {
+      const val = document.getElementById('otp').value.trim();
+      if(val === '1234'){
+        document.getElementById('step-phone').style.display = 'none';
+        document.getElementById('step-otp').style.display = 'none';
+        document.getElementById('step-details').style.display = 'block';
+      } else {
+        alert('Invalid OTP (demo use 1234)');
+      }
+    }
+
+    saveDetails.onclick = () => {
+      // basic validation skipped for brevity
+      document.getElementById('step-details').style.display = 'none';
+      document.getElementById('step-subject').style.display = 'block';
+    }
+    editPhone.onclick = () => {
+      document.getElementById('step-otp').style.display = 'none';
+      document.getElementById('step-phone').style.display = 'block';
+    }
+
+    document.getElementById('chooseSubject').onclick = () =>{
+      document.getElementById('step-subject').style.display = 'none';
+      document.getElementById('step-actions').style.display = 'block';
+    }
+
+    // Action handlers (demo placeholders)
+    function openBook(){ alert('Open Book — show chapter content (demo)') }
+    function solveExercise(){ alert('Solve Exercise — launch practice module (demo)') }
+    function watchVideo(){ alert('Watch Video — play short clip (demo)') }
+    function talkAI(){ alert('Talk with AI — open chat (demo)') }
+    function makeQuiz(){ alert('Generate Quiz — creating 10 Qs (demo)') }
+  </script>
+</body>
+</html>
